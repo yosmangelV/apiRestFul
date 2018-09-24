@@ -15,9 +15,11 @@ class Product extends Model
 	const PRODUCTO_DISPONIBLE='disponible';
 	const PRODUCTO_NO_DISPONIBLE='no disponible';
 
-    protected $fillable=['name', 'description', 'quatity', 'status', 'image', 'sellerd_id'];
+    protected $fillable=['name', 'description', 'quatity', 'status', 'image', 'seller_id'];
     protected $dates=['deleted_at'];
 
+    protected $hidden=['pivot'];
+    
     public function estaDisponible(){
     	return $this->status == Product::PRODUCTO_DISPONIBLE;
     }
@@ -27,7 +29,7 @@ class Product extends Model
     }
 
     public function seller(){
-    	$this->belongsTo(Seller::class);
+    	return $this->belongsTo(Seller::class);
     }
 
     public function transaction(){
