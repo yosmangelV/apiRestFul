@@ -23,7 +23,8 @@ comando:
 
 * `php artisan migrate:refresh --seed`
 
-
+Para conocer la lista de ENDPOINTS verificar el archivo
+ *Lista-de-End-Point.txt*
 ###DISFRUTA!!!
 
 
